@@ -14,9 +14,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# backend/health_platform_api/urls.py
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+# 1. Importăm view-urile pentru token
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('users.urls')),
+    
+    # 2. Rutele pentru Login
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'), # Login (Primești Token)
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # Refresh (Prelungești sesiunea)
 ]
