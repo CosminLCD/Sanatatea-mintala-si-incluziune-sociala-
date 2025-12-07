@@ -1,25 +1,29 @@
+// frontend/src/App.js
 import React from 'react';
-import './App.css'; // Încă avem nevoie să importăm fișierul CSS
-import { Routes, Route } from 'react-router-dom'; // Importăm componentele necesare pentru rutare
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
 
-import Header from './components/Header'; // Importăm componenta Header
-import Home from './pages/Home'; // Importăm pagina Home
-import Resources from './pages/Resources'; // Importăm pagina Resources
-import Contact from './pages/Contact'; // Importăm pagina Contact 
+// Importăm Layout-ul nou
+import MainLayout from './components/layout/MainLayout';
+
+// Importăm Paginile
+import Home from './pages/Home';
+import Resources from './pages/Resources'; // Asigură-te că fișierul există sau comentează linia
+import Contact from './pages/Contact';   // Asigură-te că fișierul există sau comentează linia
 
 function App() {
   return (
     <div className="App">
-     <Header /> {/* 2. Folosim componentul Header */}
-      <main>
-        <Routes> {/* 3. Zona unde se schimbă conținutul */}
+      {/* Învelim totul în Layout. Acesta va afișa Header-ul automat. */}
+      <MainLayout>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resurse" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Rută de rezervă pentru 404 (dacă adresa nu se potrivește) */}
-          <Route path="*" element={<h2>404 | Pagină negăsită</h2>} /> 
+          {/* Poți adăuga și alte rute aici */}
+          <Route path="*" element={<h2>404 | Pagină negăsită</h2>} />
         </Routes>
-      </main>
+      </MainLayout>
     </div>
   );
 }

@@ -1,0 +1,77 @@
+/* frontend/src/components/Header.css */
+
+/* Variabile pentru culori (ca să le putem schimba ușor) */
+:root {
+  --primary-teal: #00796b;       /* Culoarea închisă (Logo, Buton Cont) */
+  --light-teal-bg: #e0f2f1;      /* Fundalul pentru butonul activ */
+  --text-dark: #37474f;          /* Culoarea textului normal */
+  --white: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Împarte spațiul: stânga, mijloc, dreapta */
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Umbră fină sub meniu */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 1. Stiluri Logo --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-teal);
+}
+
+.logo-icon-circle {
+  background-color: var(--primary-teal);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-icon {
+  color: white;
+  font-size: 18px;
+}
+
+/* --- 2. Stiluri Link-uri --- */
+.navbar-links {
+  display: flex;
+  gap: 15px; /* Spațiu între link-uri */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 12px; /* Colțuri rotunjite */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spațiu între iconiță și text */
+  transition: all 0.3s ease;
+}
+
+/* Efectul de Hover (când pui mouse-ul peste) */
+.nav-link:hover {
+  background-color: #f5f5f5;
+  color: var(--primary-teal);
+}
+
+/* STAREA ACTIVĂ (Exact ca în poză la "Acasă") */
+.nav-link.active {
+  background-color: var(--light-teal-bg);
+  color: var(--primary-teal);
+  font-weight: 600;
+}
+
