@@ -8,6 +8,8 @@ import MainLayout from './components/layout/MainLayout';
 
 // Importăm Paginile
 import Home from './pages/Home';
+import Login from './features/auth/Login';       // <--- Import nou
+import Register from './features/auth/Register'; // <--- Import nou
 import Resources from './pages/Resources'; // Asigură-te că fișierul există sau comentează linia
 import Contact from './pages/Contact';   // Asigură-te că fișierul există sau comentează linia
 
@@ -20,6 +22,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/resurse" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Definim rutele pentru autentificare */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           {/* Poți adăuga și alte rute aici */}
           <Route path="*" element={<h2>404 | Pagină negăsită</h2>} />
         </Routes>
