@@ -12,6 +12,11 @@ import Login from './features/auth/Login';       // <--- Import nou
 import Register from './features/auth/Register'; // <--- Import nou
 import Resources from './pages/Resources'; // Asigură-te că fișierul există sau comentează linia
 import Contact from './pages/Contact';   // Asigură-te că fișierul există sau comentează linia
+import Dashboard from './pages/Dashboard'; // Asigură-te că fișierul există sau comentează linia
+import ApplySpecialist from './pages/ApplySpecialist'; // Asigură-te că fișierul există sau comentează linia
+import ApplyONG from './pages/ApplyONG';
+import Specialists from './pages/Specialists'; // Asigură-te că fișierul există sau comentează linia
+import SpecialistDetails from './pages/SpecialistDetails';
 
 function App() {
   return (
@@ -25,7 +30,12 @@ function App() {
           {/* Definim rutele pentru autentificare */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* Poți adăuga și alte rute aici */}
+          <Route path="/apply-specialist" element={<ApplySpecialist />} />
+          <Route path="/apply-ong" element={<ApplyONG />} />
+          <Route path="/specialists" element={<Specialists />} />
+          <Route path="/specialist/:id" element={<SpecialistDetails />} />
           <Route path="*" element={<h2>404 | Pagină negăsită</h2>} />
         </Routes>
       </MainLayout>

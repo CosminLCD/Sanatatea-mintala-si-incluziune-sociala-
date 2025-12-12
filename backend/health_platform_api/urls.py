@@ -23,6 +23,10 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+# Importuri necesare pentru fișiere media
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('users.urls')),
@@ -31,3 +35,7 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'), # Login (Primești Token)
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # Refresh (Prelungești sesiunea)
 ]
+
+# Aceasta linie magică permite vizualizarea pozelor în timpul dezvoltării (DEBUG=True)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

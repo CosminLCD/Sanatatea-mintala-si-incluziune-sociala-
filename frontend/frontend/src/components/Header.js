@@ -52,7 +52,7 @@ function Header() {
           <FaRobot className="link-icon" /> Asistent AI
         </NavLink>
 
-        <NavLink to="/specialisti" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+        <NavLink to="/specialists" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           <FaUserMd className="link-icon" /> Specialiști
         </NavLink>
 

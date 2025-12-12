@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+De fiecare dată când vrei să lucrezi la proiect:
+
+Terminal 1: docker compose up -d (o singură dată).
+docker compose up -d
+
+Terminal 2: cd backend -> activate -> runserver.
+Activează mediul virtual (foarte important!):
+.\venv\Scripts\activate
+python manage.py runserver
+
+Terminal 3: cd frontend -> npm start.
+npm start
